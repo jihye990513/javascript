@@ -1,0 +1,16 @@
+@mixin clear {
+    &::after{
+        content: "";
+        display: block;
+        content: "";
+    }
+}
+
+@mixin mobile{
+    @media (max-width: 767px){ 
+      @content;
+    }
+  }
+
+$main-color: red;
+$sub-color: blue;
