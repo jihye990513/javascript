@@ -6,6 +6,11 @@
     }
 }
 
+@mixin bg-size($bg-width, $bg-height) {
+  -webkit-background-size: $bg-width+px $bg-height+px;
+  background-size: $bg-width+px $bg-height+px;
+}
+
 @mixin mobile{
     @media (max-width: 767px){ 
       @content;

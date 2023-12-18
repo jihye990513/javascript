@@ -1,5 +1,5 @@
 {
-  "name": "settimg",
+  "name": "setting",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -8,19 +8,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jihye990513/SETTIMG.git"
+    "url": "git+https://github.com/jihye990513/SETTING.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jihye990513/SETTIMG/issues"
+    "url": "https://github.com/jihye990513/SETTING/issues"
   },
-  "homepage": "https://github.com/jihye990513/SETTIMG#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-sass": "^5.1.0"
-  },
+  "homepage": "https://github.com/jihye990513/SETTING#readme",
   "dependencies": {
-    "sass": "^1.56.1"
+    "gulp": "^3.9.1",
+    "gulp-watch": "^0.1.0",
+    "source-map": "^0.7.3"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp.spritesmith": "^6.11.0",
+    "gulpsmith": "^0.6.0"
   }
 }
