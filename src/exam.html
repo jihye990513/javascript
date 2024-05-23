@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop 반복문 + Array 배열 + function 함수</title>
+</head>
+
+<body>
+    <h1>Loop</h1>
+    <p>반복문은, 순서대로 실행되는 실행 순서를 제어하는 제어문</p>
+    <ul>
+        <script>
+            document.write('<li>1</li>');
+            var i = 0;
+            while (i < 3) {
+                document.write('<li>2</li>');
+                document.write('<li>3</li>');
+                i = i + 1;
+            }
+
+            document.write('<li>4</li>');
+        </script>
+    </ul>
+
+    <h1>Loop + Array</h1>
+
+    <script>
+        var coworkers = ['은정', '준만', '지혜', '승환'];
+    </script>
+
+    <h2>Co workers</h2>
+    <ul>
+        <script>
+            var i = 0;
+            while (i < coworkers.length) {
+                document.write('<li><a href="http://a.com/ ' + coworkers[i] + ' ">' + coworkers[i] + '</a></li>');
+                i = i + 1;
+            }
+        </script>
+    </ul>
+
+    <h1>Function</h1>
+    <ul>
+        <script>
+            function two() {
+                document.write('<li>2-1</li>');
+                document.write('<li>2-2</li>');
+            }
+
+            document.write('<li>1</li>');
+            two();
+            document.write('<li>3</li>');
+            two();
+        </script>
+    </ul>
+
+
+    <h2>Parameter(매개변수) & Argument(인자)</h2>
+
+    <script>
+        function onePlusone(){
+            document.write(1 + 1+'<br>');
+        }
+
+        onePlusone();
+                      // 매개변수
+        function sum(left, right){
+            document.write(left+right+'<br>');
+
+        }
+        function sumColorRed(left, right) {
+            document.write('<div style="color:red">'+left+right+ '</div><br>');
+        }
+
+        // 인자
+        sum(2, 3);
+        sumColorRed(2, 3);
+        sum(3, 4);
+    </script>
+
+    <h1>Return</h1>
+    <script>
+        function sum2(left, right){
+            return left+right;
+        }
+
+        document.write(sum2(2,3)+'<br>');
+        document.write('<div style="color: red">'+sum2(2,3)+'</div>');
+        document.write('<div style="font-size: 3rem">' +sum2(2, 3) + '</div>');
+    </script>
+
+    <h1>리팩토링으로 코드를 효율적으로 !</h1>
+
+    <input id="BtnNight" type="button" value="night" onclick="nightDayHandler(this)">
+    
+    <script>
+        var target = document.querySelector('body');
+
+        function Link_setColor(color) {
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+
+            while (i < alist.length) {
+                alist[i].style.color = color;
+                i = i + 1;
+            }
+        }
+
+        function Font_setColor(color) {
+            target.style.color = color;
+        }
+
+        function Background_setColor(color) {
+            target.style.backgroundColor = color;
+        }
+
+        function nightDayHandler(self) {
+            if (self.value === 'night') {
+                self.value = 'day';
+                Background_setColor('black');
+                Font_setColor('white');
+                Link_setColor('powderblue');
+
+            } else {
+                self.value = 'night';
+                Background_setColor('white');
+                Font_setColor('black');
+                Link_setColor('blue');
+            }
+        }
+    </script>
+</body>
+
+</html>

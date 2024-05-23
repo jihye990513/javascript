@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+</head>
+
+<body>
+    <h1>querySelector 연습</h1>
+    <button type="button" value="밤" onclick="
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color='white';">밤</button>
+
+    <button type="button" value="낮" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';">낮</button>
+
+
+    <h1>javascript로 글씨쓰기</h1>
+    <script>
+        document.write("1<br>");
+        document.write("2<br>");
+        document.write("3<br>");
+        document.write("4<br>");
+    </script>
+
+    <h2>IF - true</h2>
+
+    <script>
+        document.write("1<br>");
+        if (true) {
+            document.write("ture<br>");
+        } else {
+            document.write("false<br>");
+        }
+    </script>
+
+    <h2>IF - false</h2>
+
+    <script>
+        document.write("1<br>");
+        if (false) {
+            document.write("true<br>");
+        } else {
+            document.write("flase<br>");
+        }
+    </script>
+
+
+    <h1>IF문 : value 값이 night면 if 안의 실행문 출력</h1>
+    <input id="night_day" type="button" value="night" onclick="
+        if(document.querySelector('#night_day').value === 'night'){
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('#night_day').value = 'day';
+        } else {
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('#night_day').value = 'night';
+        }
+    ">
+
+    <h1>리팩토링 : this / target 으로 적용하기</h1>
+    <p>비효율적으로 반복되는 코드를 효율적으로 만들어 가독성과 유지보수를 높임</p>
+
+    <input type="button" value="night" onclick="
+        var target = document.querySelector('body');
+        if(this.value === 'night'){
+            target.style.backgroundColor = 'black';
+            target.style.color = 'white';
+            this.value = 'day';
+        } else {
+            target.style.backgroundColor = 'white';
+            target.style.color = 'black';
+            this.value = 'night';
+        }
+    ">
+</body>
+
+</html>

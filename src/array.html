@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 배열</title>
+</head>
+
+<body>
+    <h1>Array</h1>
+    <h1>Syntax</h1>
+
+    <script>
+        var coworkers = ["첫번째", "두번째"];
+    </script>
+
+    <h1>add</h1>
+
+    <script>
+        coworkers.push('깍뚜기');
+        coworkers.push('홍당무');
+    </script>
+
+    <h1>get</h1>
+    <script>
+        document.write(coworkers[0]);
+        document.write(coworkers[1]);
+    </script>
+
+    <h1>count</h1>
+    <script>
+        // 값의 개수
+        document.write(coworkers.length + '<br>')
+    </script>
+
+    <script>
+        var coworkers = ['지혜', '윤규'];
+        document.write(coworkers[0]);
+    </script>
+
+    <h1>Create</h1>
+    <script>
+        var coworkers = {
+            "programer": "지혜",
+            "designer": "윤규",
+        }
+
+        document.write("programer : " + coworkers.programer + "<br>");
+        document.write("designer : " + coworkers.designer + "<br>");
+        coworkers.bookkeeper = "은정";
+        document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+        coworkers["data scientist"] = "준만";
+        document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+    </script>
+
+    <script>
+        var countries = {
+            "asia": "korea",
+            "europe": "england", 
+        }
+
+        document.write("asia : " + countries.asia + "<br>");
+        document.write('europe : '+ countries.europe + "<br>");
+    </script>
+</body>
+
+</html>

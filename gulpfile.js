@@ -1,11 +1,12 @@
 'use strict';
 
 var gulp = require('gulp');
-// var fs = require('fs');
 var path = require('path');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var spritesmith = require('gulp.spritesmith');
+const { title } = require('process');
+const { Server } = require('http');
 
 var path = {
   scss_src: 'src/scss/',
@@ -28,7 +29,7 @@ gulp.task('watch', function () {
   gulp.watch('src/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('sprite', async function () {
+gulp.task('sprite', function () {
   var spriteData = gulp.src(path.img_src + '/sp_img/*.png')
     .pipe(spritesmith({
       imgName: 'sp_img.png',
@@ -38,3 +39,5 @@ gulp.task('sprite', async function () {
   spriteData.img.pipe(gulp.dest(path.img_src));
   spriteData.css.pipe(gulp.dest(path.scss_src + 'sprite'));
 });
+
+gulp.task('default', ['watch', 'sprite']);
