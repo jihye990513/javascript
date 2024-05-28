@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array 배열</title>
+    <title>Array 배열 + 객체</title>
 </head>
 
 <body>
@@ -43,11 +43,11 @@
     <h1>Create</h1>
     <script>
         var coworkers = {
-            "programer": "지혜",
+            "programmer": "지혜",
             "designer": "윤규",
         }
 
-        document.write("programer : " + coworkers.programer + "<br>");
+        document.write("programmer : " + coworkers.programmer + "<br>");
         document.write("designer : " + coworkers.designer + "<br>");
         coworkers.bookkeeper = "은정";
         document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
@@ -55,14 +55,62 @@
         document.write("data scientist : " + coworkers["data scientist"] + "<br>");
     </script>
 
+    <h2>iterate</h2>
+    <script>
+        // 객체의 데이터를 순회하는 방법
+        // coworkers에 있는 key들을 가져오는 반복문
+        for (var key in coworkers) {
+            document.write(coworkers[key] + '<br>');
+        }
+
+        for (var key in coworkers) {
+            document.write(key + '<br>');
+        }
+
+        for (var key in coworkers) {
+            document.write(key + ': ' + coworkers[key] + '<br>');
+        }
+    </script>
+
     <script>
         var countries = {
             "asia": "korea",
-            "europe": "england", 
+            "europe": "england",
         }
 
         document.write("asia : " + countries.asia + "<br>");
-        document.write('europe : '+ countries.europe + "<br>");
+        document.write('europe : ' + countries.europe + "<br>");
+    </script>
+
+    <h2>심화 > 객채에 함수 담기 Property & Method</h2>
+    <p>객체에 소속된 함수를 Method(메소드) / 객체에 소속된 변수를 Property(프로포티)</p>
+
+    <script>
+        // = function showAll() { } 이렇게 쓰는 것과 같음
+        coworkers.showAll = function () {
+            for (var key in this) {
+                document.write(key + ' : ' + this[key] + '<br>');
+            }
+        }
+
+        coworkers.showAll();
+    </script>
+
+    <h2>예제</h2>
+    <script>
+        var coworkers = {
+            programmer: 'Alice',
+        }
+        
+        coworkers.printProgrammer() = function () {
+            for (var key in coworkers) {
+                if (key === 'programmer') {
+                    document.write(key + ' : ' + coworkers[key] + '<br>');
+                }
+            }
+        }
+
+        coworkers.printProgrammer();
     </script>
 </body>
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+
+<body>
+    <input type="button" id="night_day" value="night" onclick="nightDayBtn(this)">
+
+    <ol>
+        <li><a href="#" style="color: black;">html</a></li>
+        <li><a href="#" style="color: black;">css</a></li>
+        <li><a href="#" style="color: black;">javascript</a></li>
+    </ol>
+
+    <script>
+        var links = {
+            setColor: function (color) {
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+        }
+
+        var target = document.querySelector('body');
+
+        var body = {
+            setColor: function (color) {
+                target.style.color = color;
+            },
+            setBackgroundColor: function (color) {
+                target.style.backgroundColor = color;
+            }
+        }
+
+        function nightDayBtn(self) {
+            if (self.value === 'night') {
+                body.setColor('white');
+                body.setBackgroundColor('black');
+                self.value = 'day';
+                links.setColor('powderblue');
+            } else {
+                body.setColor('black');
+                body.setBackgroundColor('white');
+                self.value = 'night';
+                links.setColor('black');
+            }
+        }
+    </script>
+
+    <script>
+        var memberArray = ['지혜', '윤규', '하루'];
+
+        document.write('memberArray[0]', memberArray[0] + '<br>');
+
+        var memberObject = {
+            '지혜': '기획자',
+            '윤규': '개발자',
+            '하루': '디자이너',
+        }
+
+        // 객체에 있는 값을 읽을 때는 .점 이나 []대괄호 로 읽을 수 있음
+        document.write("memberObject.하루", memberObject.하루);
+        document.write("memberObject.['하루']", memberObject['하루']);
+    </script>
+</body>
+
+</html>
